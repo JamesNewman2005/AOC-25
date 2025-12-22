@@ -1,0 +1,1 @@
+Solutions to AOC 25 in Rust
