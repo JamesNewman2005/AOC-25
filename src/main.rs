@@ -1,6 +1,7 @@
-use std::fs;
+use std::fs::{self, read_to_string};
 
 mod days;
+mod helpers;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
 
@@ -12,7 +13,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("--------------- DAY 1 ---------------");
     println!("Answer For Part 1: {}", p1_result);
-    println!("Answer For Part 2: {}", p2_result);     
+    println!("Answer For Part 2: {}", p2_result);
+
+
+    // DAY 2 -----------------------------------------------------------
+    let input = fs::read_to_string("input_files/day02.csv")?;
+
+    let p1_result: u64 = days::day02::solve(&input);
+
+    println!("--------------- DAY 2 ---------------");
+    println!("Answer For Part 1: {}", p1_result);
+    //println!("Answer For Part 2: {}", p2_result);
 
     Ok(())
 }
